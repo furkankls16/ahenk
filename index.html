@@ -1,146 +1,135 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahenk</title>
-    <link rel="icon" href="logo6.png" type="image/png" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <style>
-      /* Arka plan animasyonu */
-      body {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        background: linear-gradient(135deg, #b3ff66, #99ff99);
-        color: #111;
-        text-align: center;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahenk</title>
+  <link rel="icon" href="logo6.png" type="image/png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <style>
+    /* Genel Ayarlar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      #profilePicture img {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        border: 5px solid #111;
-        margin-top: 50px;
-        transition: transform 0.3s ease;
-      }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #b6ff5c, #90ff90);
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-      #profilePicture img:hover {
-        transform: scale(1.05);
-      }
+    /* Logo */
+    .logo {
+      width: 200px;
+      animation: fadeIn 1.5s ease forwards, float 3s ease-in-out infinite;
+    }
 
-      #userName {
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin-top: 20px;
-        color: #111;
-      }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
 
-      #links {
-        margin-top: 30px;
-      }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
 
-      .link {
-        display: inline-block;
-        margin: 10px;
-        padding: 12px 24px;
-        font-size: 1.1rem;
-        text-decoration: none;
-        color: #111;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-      }
+    /* Marka İsmi */
+    h1 {
+      font-size: 3rem;
+      margin-top: 20px;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: 2px;
+    }
 
-      .link:hover {
-        background: #111;
-        color: #fff;
-        transform: translateY(-3px);
-      }
+    /* Slogan */
+    p {
+      font-size: 1.3rem;
+      margin: 15px 0 40px;
+      color: #333;
+      font-style: italic;
+    }
 
-      #hashtag {
-        margin-top: 40px;
-        font-size: 1.2rem;
-        font-weight: 500;
-      }
+    /* Butonlar */
+    .links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-      #footer {
-        margin-top: 50px;
-        font-size: 0.9rem;
-        color: #444;
-      }
+    .link {
+      padding: 12px 25px;
+      background: #111;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-      .heart {
-        color: red;
-      }
+    .link i {
+      font-size: 1.3rem;
+    }
 
-      /* Popup */
-      .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.7);
-        display: none;
-        justify-content: center;
-        align-items: center;
-      }
+    .link:hover {
+      background: #fff;
+      color: #111;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
 
-      .overlay:target {
-        display: flex;
-      }
+    /* Footer */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #444;
+    }
 
-      .popup {
-        background: #fff;
-        padding: 20px;
-        border-radius: 20px;
-        max-width: 400px;
-        text-align: center;
-      }
+    footer span {
+      color: red;
+    }
+  </style>
+</head>
+<body>
 
-      .popup img {
-        width: 200px;
-      }
+  <!-- Logo -->
+  <img src="logo6.png" alt="Ahenk Logo" class="logo">
 
-      .popup-close {
-        display: inline-block;
-        margin-top: 15px;
-        font-size: 1.5rem;
-        text-decoration: none;
-        color: #111;
-      }
-    </style>
-  </head>
-  <body>
-    <a id="profilePicture" href="#popup">
-      <img src="logo6.png" alt="Ahenk Logo">
-    </a>
+  <!-- Marka İsmi -->
+  <h1>Ahenk</h1>
 
-    <div class="overlay" id="popup">
-      <div class="popup">
-        <img src="logo6.png" alt="Ahenk Logo">
-        <div class="popup-quote">Ahenk ile Hayatınıza Uyum Katın.</div>
-        <a class="popup-close" href="#">&times;</a>
-      </div>
-    </div>
+  <!-- Slogan -->
+  <p>Hayata Uyum Kat!</p>
 
-    <div id="userName">Ahenk</div>
+  <!-- Sosyal Medya Linkleri -->
+  <div class="links">
+    <a class="link" href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a class="link" href="#" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+    <a class="link" href="#" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+  </div>
 
-    <div id="links">
-      <a class="link" href="#" target="_blank"><i class="fab fa-instagram"></i>&nbsp; Instagram</a>
-      <a class="link" href="#" target="_blank"><i class="fab fa-youtube"></i>&nbsp; YouTube</a>
-      <a class="link" href="#" target="_blank"><i class="fab fa-discord"></i>&nbsp; Discord</a>
-    </div>
+  <!-- Footer -->
+  <footer>
+    Made with <span>❤</span> by Ahenk
+  </footer>
 
-    <div id="hashtag">
-      #Ahenk – Hayallerinizi Gerçeğe Dönüştürün!
-    </div>
-    
-    <div id="footer">
-      Made With <span class="heart">❤</span> by Ahenk
-    </div>
-  </body>
+</body>
 </html>
 
