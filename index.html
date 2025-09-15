@@ -16,7 +16,6 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #b6ff5c, #90ff90);
       color: #111;
       display: flex;
       flex-direction: column;
@@ -24,13 +23,23 @@
       justify-content: center;
       min-height: 100vh;
       text-align: center;
-      overflow-x: hidden;
+      overflow: hidden;
+      background: linear-gradient(-45deg, #aaff66, #66ffb2, #66ccff, #a366ff);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     /* Logo */
     .logo {
       width: 200px;
       animation: fadeIn 1.5s ease forwards, float 3s ease-in-out infinite;
+      z-index: 2;
     }
 
     @keyframes fadeIn {
@@ -49,16 +58,20 @@
       font-size: 3rem;
       margin-top: 20px;
       font-weight: 700;
-      color: #111;
+      color: #fff;
       letter-spacing: 2px;
+      text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      z-index: 2;
     }
 
     /* Slogan */
     p {
       font-size: 1.3rem;
       margin: 15px 0 40px;
-      color: #333;
+      color: #f1f1f1;
       font-style: italic;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      z-index: 2;
     }
 
     /* Butonlar */
@@ -67,11 +80,13 @@
       gap: 20px;
       flex-wrap: wrap;
       justify-content: center;
+      z-index: 2;
     }
 
     .link {
       padding: 12px 25px;
-      background: #111;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
       color: #fff;
       border-radius: 30px;
       text-decoration: none;
@@ -81,6 +96,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .link i {
@@ -90,8 +106,8 @@
     .link:hover {
       background: #fff;
       color: #111;
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     /* Footer */
@@ -99,7 +115,8 @@
       position: absolute;
       bottom: 20px;
       font-size: 0.9rem;
-      color: #444;
+      color: #eee;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
     footer span {
