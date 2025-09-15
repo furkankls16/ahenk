@@ -1,115 +1,68 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahenk</title>
-  <link rel="icon" <a href="https://imgyukle.com/i/Cfd29y"><img src="https://i.imgyukle.com/2025/09/15/Cfd29y.png" alt="logo6" border="0"></a>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-  <style>
-    /* Genel Ayarlar */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ahenk</title>
+    <link rel="icon" href="https://imgyukle.com/i/Cfd29y"><img src="https://i.imgyukle.com/2025/09/15/Cfd29y.png" alt="logo6" border="0"></a>" type="image/x-icon" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-    body {
-      font-family: "Poppins", sans-serif;
-      color: #111;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      overflow: hidden;
-      background: linear-gradient(-45deg, #aaff66, #66ffb2, #66ccff, #a366ff);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-    }
+  <body>
+    <!-- Parallax Pixel Background Animation -->
+    <section class="animated-background">
+      <div id="stars1"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </section>
+    <!-- End of Parallax Pixel Background Animation -->
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+    <a id="profilePicture" href="#popup">
+      <img src="https://cdn.glitch.global/de528b29-2cf7-4198-9e5a-fc2f7a3e12ec/mstsho.png?v=1750087165589" alt="Profile Picture">
+    </a>
 
-    /* Logo */
-    .logo {
-      width: 200px;
-      animation: fadeIn 1.5s ease forwards, float 3s ease-in-out infinite;
-      z-index: 2;
-    }
+    <div class="overlay" id="popup">
+      <div class="popup">
+        <div class="popup-photo">
+          <a href="https://cdn.glitch.global/de528b29-2cf7-4198-9e5a-fc2f7a3e12ec/mstsho.png?v=1750087165589" target="_blank">
+            <img src="https://cdn.glitch.global/de528b29-2cf7-4198-9e5a-fc2f7a3e12ec/mstsho.png?v=1750087165589" alt="Profile Picture">
+          </a>
+        </div>
+        <div class="popup-quote">
+          MosterShop Sunar.
+        </div>
+        <a class="popup-close" onclick="history.back()">&times;</a>
+      </div>
+    </div>
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: scale(0.8);}
-      to {opacity: 1; transform: scale(1);}
-    }
+    <div id="userName">
+      @MosterShop
+    </div>
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
+    <div id="links">
+      <a class="link" href="https://github.com/MosterBey" target="_blank">
+        <i class="fab fa-github">&nbsp;</i>Github
+      </a>
+      <a class="link" href="https://www.instagram.com/emirhanyvs16/" target="_blank">
+        <i class="fab fa-instagram">&nbsp;</i>Instagram
+      </a>
+      <a class="link" href="https://www.youtube.com/@Mosteryvs" target="_blank">
+        <i class="fab fa-youtube">&nbsp;</i>YouTube
+      </a>
+      <a class="link" href="https://discord.gg/mostershop" target="_blank">
+        <i class="fab fa-discord">&nbsp;</i>Discord
+      </a>
+    </div>
 
-    /* Marka İsmi */
-    h1 {
-      font-size: 3rem;
-      margin-top: 20px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 2px;
-      text-shadow: 0 3px 6px rgba(0,0,0,0.2);
-      z-index: 2;
-    }
-
-    /* Slogan */
-    p {
-      font-size: 1.3rem;
-      margin: 15px 0 40px;
-      color: #f1f1f1;
-      font-style: italic;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      z-index: 2;
-    }
-
-    /* Butonlar */
-    .links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      z-index: 2;
-    }
-
-    .link {
-      padding: 12px 25px;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(8px);
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .link i {
-      font-size: 1.3rem;
-    }
-
-    .link:hover {
-      background: #fff;
-      color: #111;
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
+    <div id="hashtag">
+      #MosterShop ❤️ Hayallerinizi Zirveye Taşıyın!
+    </div>
+    
+    <div id="footer">
+      Made With <span class="heart">❤</span>
+    </div>
+  </body>
+</html>
     /* Footer */
     footer {
       position: absolute;
