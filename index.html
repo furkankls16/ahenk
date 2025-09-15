@@ -3,64 +3,144 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MosterShop</title>
-    <link rel="icon" href="https://i.imgyukle.com/2025/09/15/Cfd29y.png" type="image/x-icon" />
+    <title>Ahenk</title>
+    <link rel="icon" href="logo6.png" type="image/png" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Arka plan animasyonu */
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #b3ff66, #99ff99);
+        color: #111;
+        text-align: center;
+      }
+
+      #profilePicture img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 5px solid #111;
+        margin-top: 50px;
+        transition: transform 0.3s ease;
+      }
+
+      #profilePicture img:hover {
+        transform: scale(1.05);
+      }
+
+      #userName {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-top: 20px;
+        color: #111;
+      }
+
+      #links {
+        margin-top: 30px;
+      }
+
+      .link {
+        display: inline-block;
+        margin: 10px;
+        padding: 12px 24px;
+        font-size: 1.1rem;
+        text-decoration: none;
+        color: #111;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+
+      .link:hover {
+        background: #111;
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      #hashtag {
+        margin-top: 40px;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      #footer {
+        margin-top: 50px;
+        font-size: 0.9rem;
+        color: #444;
+      }
+
+      .heart {
+        color: red;
+      }
+
+      /* Popup */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .overlay:target {
+        display: flex;
+      }
+
+      .popup {
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .popup img {
+        width: 200px;
+      }
+
+      .popup-close {
+        display: inline-block;
+        margin-top: 15px;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #111;
+      }
+    </style>
   </head>
-
   <body>
-    <!-- Parallax Pixel Background Animation -->
-    <section class="animated-background">
-      <div id="stars1"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
-    </section>
-    <!-- End of Parallax Pixel Background Animation -->
-
     <a id="profilePicture" href="#popup">
-      <img src="https://cdn.glitch.global/de528b29-2cf7-4198-9e5a-fc2f7a3e12ec/mstsho.png?v=1750087165589" alt="Profile Picture">
+      <img src="logo6.png" alt="Ahenk Logo">
     </a>
 
     <div class="overlay" id="popup">
       <div class="popup">
-        <div class="popup-photo">
-          <a href="https://cdn.glitch.global/de528b29-2cf7-4198-9e5a-fc2f7a3e12ec/mstsho.png?v=1750087165589" target="_blank">
-            <img src="https://cdn.glitch.global/de528b29-2cf7-4198-9e5a-fc2f7a3e12ec/mstsho.png?v=1750087165589" alt="Profile Picture">
-          </a>
-        </div>
-        <div class="popup-quote">
-          MosterShop Sunar.
-        </div>
-        <a class="popup-close" onclick="history.back()">&times;</a>
+        <img src="logo6.png" alt="Ahenk Logo">
+        <div class="popup-quote">Ahenk ile Hayatınıza Uyum Katın.</div>
+        <a class="popup-close" href="#">&times;</a>
       </div>
     </div>
 
-    <div id="userName">
-      @MosterShop
-    </div>
+    <div id="userName">Ahenk</div>
 
     <div id="links">
-      <a class="link" href="https://github.com/MosterBey" target="_blank">
-        <i class="fab fa-github">&nbsp;</i>Github
-      </a>
-      <a class="link" href="https://www.instagram.com/emirhanyvs16/" target="_blank">
-        <i class="fab fa-instagram">&nbsp;</i>Instagram
-      </a>
-      <a class="link" href="https://www.youtube.com/@Mosteryvs" target="_blank">
-        <i class="fab fa-youtube">&nbsp;</i>YouTube
-      </a>
-      <a class="link" href="https://discord.gg/mostershop" target="_blank">
-        <i class="fab fa-discord">&nbsp;</i>Discord
-      </a>
+      <a class="link" href="#" target="_blank"><i class="fab fa-instagram"></i>&nbsp; Instagram</a>
+      <a class="link" href="#" target="_blank"><i class="fab fa-youtube"></i>&nbsp; YouTube</a>
+      <a class="link" href="#" target="_blank"><i class="fab fa-discord"></i>&nbsp; Discord</a>
     </div>
 
     <div id="hashtag">
-      #MosterShop ❤️ Hayallerinizi Zirveye Taşıyın!
+      #Ahenk – Hayallerinizi Gerçeğe Dönüştürün!
     </div>
     
     <div id="footer">
-      Made With <span class="heart">❤</span>
+      Made With <span class="heart">❤</span> by Ahenk
     </div>
   </body>
 </html>
+
