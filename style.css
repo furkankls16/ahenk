@@ -1,11 +1,11 @@
 /* Genel Ayarlar */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #c3ff6f;
   color: #000;
@@ -17,16 +17,29 @@ body {
   position: relative;
 }
 
-/* İçerik Kutusu */
+/* Konteyner */
 .container {
   text-align: center;
-  z-index: 1;
+  z-index: 0; /* logo ve içerik en arkada */
 }
 
 /* Logo */
 .logo {
-  width: 150px;
-  margin-bottom: 20px;
+  display: block;
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+  image-rendering: auto;
+  position: relative;
+  z-index: 0; /* yapraklar bunun üstünden geçsin */
+}
+
+/* Mobil için */
+@media (max-width: 480px) {
+  .logo {
+    max-width: 100px;
+  }
 }
 
 /* Başlık */
@@ -61,7 +74,7 @@ h1 {
   transform: scale(1.05);
 }
 
-/* WhatsApp Butonu */
+/* WhatsApp Butonları */
 .whatsapp-button {
   background-color: #25D366;
   color: white;
@@ -71,6 +84,8 @@ h1 {
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  width: 250px;
+  display: inline-block;
 }
 
 .whatsapp-button:hover {
@@ -93,46 +108,7 @@ h1 {
   pointer-events: none;
   animation: fallLeaf linear;
   opacity: 0.8;
-}
-
-@keyframes fallLeaf {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(100vh) translateX(30px) rotate(360deg);
-    opacity: 0;
-  }
-/* Logo */
-.logo {
-  display: block;
-  max-width: 140px;
-  width: 100%;
-  height: auto;
-  margin: 0 auto 20px;
-  image-rendering: auto;
-  position: relative;
-  z-index: 0; /* Arkada kalmasını sağla */
-}
-
-/* Mobil için küçültme */
-@media (max-width: 480px) {
-  .logo {
-    max-width: 100px;
-  }
-}
-
-/* Yaprak efekti */
-.leaf {
-  position: absolute;
-  top: -30px;
-  font-size: 20px;
-  user-select: none;
-  pointer-events: none;
-  animation: fallLeaf linear;
-  opacity: 0.8;
-  z-index: 1; /* Logonun üstünden geçmesi için daha yüksek */
+  z-index: 1; /* logonun ve içeriğin ÜSTÜNDEN geçer */
 }
 
 @keyframes fallLeaf {
@@ -145,5 +121,3 @@ h1 {
     opacity: 0;
   }
 }
-
-
