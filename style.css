@@ -103,19 +103,44 @@ h1 {
   100% {
     transform: translateY(100vh) translateX(30px) rotate(360deg);
     opacity: 0;
-    .logo {
+    /* Logo */
+.logo {
   display: block;
   max-width: 140px;
   width: 100%;
   height: auto;
   margin: 0 auto 20px;
   image-rendering: auto;
+  position: relative;
+  z-index: 0; /* Arkada kalmasını sağla */
 }
 
-/* Mobil cihazlar için (ekstra küçültme) */
+/* Mobil için küçültme */
 @media (max-width: 480px) {
   .logo {
     max-width: 100px;
   }
 }
 
+/* Yaprak efekti */
+.leaf {
+  position: absolute;
+  top: -30px;
+  font-size: 20px;
+  user-select: none;
+  pointer-events: none;
+  animation: fallLeaf linear;
+  opacity: 0.8;
+  z-index: 1; /* Logonun üstünden geçmesi için daha yüksek */
+}
+
+@keyframes fallLeaf {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) translateX(30px) rotate(360deg);
+    opacity: 0;
+  }
+}
