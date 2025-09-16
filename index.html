@@ -21,11 +21,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
 
     .container {
       text-align: center;
-      position: relative;
       z-index: 1;
     }
 
@@ -42,8 +42,9 @@
     .menu {
       display: flex;
       flex-direction: column;
-      gap: 20px;
       align-items: center;
+      gap: 15px;
+      margin-top: 20px;
     }
 
     .menu a {
@@ -63,21 +64,20 @@
     }
 
     .footer {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 0.9em;
       color: #333;
     }
 
-    /* Yağmur damlası efekti */
+    /* Yağmur efekti */
     .raindrop {
       position: absolute;
-      top: -10px;
-      color: #00f;
-      font-size: 1em;
-      user-select: none;
+      top: -20px;
+      color: #00aaff;
+      font-size: 16px;
+      animation: fall linear;
       pointer-events: none;
-      animation: fall linear infinite;
-      z-index: 0;
+      user-select: none;
     }
 
     @keyframes fall {
@@ -95,4 +95,56 @@
 <body>
 
   <div class="container">
-    <img src="logo6.png" alt="Ahenk markasının logosu
+    <img src="logo6.png" alt="Ahenk logosu" class="logo" />
+    <h1>Ahenk</h1>
+
+    <div class="menu">
+      <a href="https://www.instagram.com/emirhanyvs16/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="katalog1.pdf" download="katalog1.pdf">
+        📘 Katalog 1
+      </a>
+      <a href="katalog2.pdf" download="katalog2.pdf">
+        📗 Katalog 2
+      </a>
+      <a href="tel:+905001112233">
+        📞 Ara - Satış Temsilcisi 1
+      </a>
+      <a href="tel:+905004445566">
+        📞 Ara - Satış Temsilcisi 2
+      </a>
+    </div>
+
+    <div class="footer">
+      © 2025 Ahenk. Tüm hakları saklıdır.
+    </div>
+  </div>
+
+  <script>
+    // Yağmur damlası üretme fonksiyonu
+    function createRaindrop() {
+      const drop = document.createElement("div");
+      drop.classList.add("raindrop");
+      drop.textContent = "💧";
+
+      // Rastgele konum, boyut, hız
+      drop.style.left = Math.random() * 100 + "vw";
+      drop.style.fontSize = (Math.random() * 10 + 10) + "px";
+      const duration = Math.random() * 3 + 2;
+      drop.style.animationDuration = duration + "s";
+
+      document.body.appendChild(drop);
+
+      // Damlaları belli süre sonra kaldır
+      setTimeout(() => {
+        drop.remove();
+      }, duration * 1000);
+    }
+
+    // Belirli aralıklarla damla üret
+    setInterval(createRaindrop, 200);
+  </script>
+
+</body>
+</html>
