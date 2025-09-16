@@ -1,66 +1,137 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MosterShop</title>
-    <link rel="icon" href="https://i.imgyukle.com/2025/09/15/Cfd29y.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ahenk</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #c3ff6f;
+      color: #000;
+      text-align: center;
+    }
 
-  <body>
-    <!-- Parallax Pixel Background Animation -->
-    <section class="animated-background">
-      <div id="stars1"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
-    </section>
-    <!-- End of Parallax Pixel Background Animation -->
+    .logo {
+      width: 150px;
+      margin: 30px auto 10px;
+      display: block;
+    }
 
-    <a id="profilePicture" href="#popup">
-      <img src="https://i.imgyukle.com/2025/09/15/Cfd29y.png" alt="Profile Picture">
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    .social {
+      margin: 20px 0;
+    }
+
+    .social a {
+      text-decoration: none;
+      color: #000;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border: 2px solid #000;
+      border-radius: 8px;
+      display: inline-block;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .social a:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .catalogs, .call-boxes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px auto;
+      max-width: 800px;
+    }
+
+    .catalog, .call-box {
+      background: #fff;
+      border: 2px solid #000;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .catalog:hover, .call-box:hover {
+      transform: scale(1.05);
+    }
+
+    .catalog a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .call-box a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #000;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .footer {
+      margin: 50px 0 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGO -->
+  <img src="logo6.png" alt="Ahenk Logo" class="logo" />
+
+  <!-- İSİM -->
+  <h1>Ahenk</h1>
+
+  <!-- INSTAGRAM -->
+  <div class="social">
+    <a href="https://www.instagram.com/emirhanyvs16/" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
     </a>
+  </div>
 
-    <div class="overlay" id="popup">
-      <div class="popup">
-        <div class="popup-photo">
-          <a href="https://cdn.glitch.global/de528b29-2cf7-4198-9e5a-fc2f7a3e12ec/mstsho.png?v=1750087165589" target="_blank">
-            <img src="https://cdn.glitch.global/de528b29-2cf7-4198-9e5a-fc2f7a3e12ec/mstsho.png?v=1750087165589" alt="Profile Picture">
-          </a>
-        </div>
-        <div class="popup-quote">
-          MosterShop Sunar.
-        </div>
-        <a class="popup-close" onclick="history.back()">&times;</a>
-      </div>
+  <!-- KATALOG -->
+  <div class="catalogs">
+    <div class="catalog">
+      <a href="#katalog1">📘 Katalog 1</a>
     </div>
+    <div class="catalog">
+      <a href="#katalog2">📗 Katalog 2</a>
+    </div>
+  </div>
 
-    <div id="userName">
-      @MosterShop
+  <!-- ARAMA BUTONLARI -->
+  <div class="call-boxes">
+    <div class="call-box">
+      <div>Satış Temsilcisi 1</div>
+      <a href="tel:+905001112233">📞 Ara</a>
     </div>
+    <div class="call-box">
+      <div>Satış Temsilcisi 2</div>
+      <a href="tel:+905004445566">📞 Ara</a>
+    </div>
+  </div>
 
-    <div id="links">
-      <a class="link" href="https://github.com/MosterBey" target="_blank">
-        <i class="fab fa-github">&nbsp;</i>Github
-      </a>
-      <a class="link" href="https://www.instagram.com/emirhanyvs16/" target="_blank">
-        <i class="fab fa-instagram">&nbsp;</i>Instagram
-      </a>
-      <a class="link" href="https://www.youtube.com/@Mosteryvs" target="_blank">
-        <i class="fab fa-youtube">&nbsp;</i>YouTube
-      </a>
-      <a class="link" href="https://discord.gg/mostershop" target="_blank">
-        <i class="fab fa-discord">&nbsp;</i>Discord
-      </a>
-    </div>
+  <!-- FOOTER -->
+  <div class="footer">
+    © 2025 Ahenk. Tüm hakları saklıdır.
+  </div>
 
-    <div id="hashtag">
-      #MosterShop ❤️ Hayallerinizi Zirveye Taşıyın!
-    </div>
-    
-    <div id="footer">
-      Made With <span class="heart">❤</span>
-    </div>
-  </body>
+</body>
 </html>
