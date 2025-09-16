@@ -4,123 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ahenk</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #c3ff6f;
-      color: #000;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .container {
-      text-align: center;
-      z-index: 1;
-    }
-
-    .logo {
-      width: 150px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 20px;
-    }
-
-    .menu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .menu a {
-      text-decoration: none;
-      color: #fff;
-      background-color: #000;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-size: 1.2em;
-      transition: background-color 0.3s, transform 0.3s;
-      width: 250px;
-    }
-
-    .menu a:hover {
-      background-color: #333;
-      transform: scale(1.05);
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #333;
-    }
-
-    /* Yaprak efekti */
-    .leaf {
-      position: absolute;
-      top: -30px;
-      font-size: 20px;
-      user-select: none;
-      pointer-events: none;
-      animation: fallLeaf linear;
-      opacity: 0.8;
-    }
-
-    @keyframes fallLeaf {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(100vh) translateX(30px) rotate(360deg);
-        opacity: 0;
-      }
-    }
-  </style>
 </head>
 <body>
 
   <div class="container">
-    <img src="https://i.imgyukle.com/2025/09/15/Cfd29y.png" alt="KALİTENİN ADRESİ" class="logo" />
-    <h1>GÜVENCESİ İLE</h1>
+    <img src="logo6.png" alt="Ahenk logosu" class="logo" />
+    <h1>Ahenk</h1>
 
     <div class="menu">
-  <a href="https://www.instagram.com/emirhanyvs16/" target="_blank">
-    <i class="fab fa-instagram"></i> Instagram
-  </a>
-  <a href="katalog1.pdf" download="katalog1.pdf">
-    📘 Katalog 1
-  </a>
-  <a href="katalog2.pdf" download="katalog2.pdf">
-    📗 Katalog 2
-  </a>
-  <a href="https://api.whatsapp.com/send?phone=905550411997&text=Merhaba%20Ahenk%20yetkilisi" 
-   target="_blank" 
-   rel="noopener noreferrer">
-   ✆ WhatsApp ile İletişime Geç
-</a>
- <a href="https://api.whatsapp.com/send?phone=905453516016&text=Merhaba%20Ahenk%20yetkilisi" 
-   target="_blank" 
-   rel="noopener noreferrer">
-   ✆ WhatsApp ile İletişime Geç
-</a>
+      <a href="https://www.instagram.com/emirhanyvs16/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
 
-</div>
+      <a href="katalog1.pdf" download="katalog1.pdf">
+        📘 Katalog 1
+      </a>
 
+      <a href="katalog2.pdf" download="katalog2.pdf">
+        📗 Katalog 2
+      </a>
+
+      <!-- WhatsApp Bağlantıları -->
+      <a id="whatsappLink1" class="whatsapp-button">
+        💬 WhatsApp - Temsilci 1
+      </a>
+
+      <a id="whatsappLink2" class="whatsapp-button">
+        💬 WhatsApp - Temsilci 2
+      </a>
+    </div>
 
     <div class="footer">
       © 2025 Ahenk. Tüm hakları saklıdır.
@@ -128,16 +42,35 @@
   </div>
 
   <script>
-    // Yaprak düşürme fonksiyonu
+    // WhatsApp yönlendirmesi – mobil uyumlu ve %100 çalışan yapı
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    function createWhatsAppLink(phone, message) {
+      if (isIOS) {
+        return `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+      } else if (isAndroid) {
+        return `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+      } else {
+        return `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+      }
+    }
+
+    document.getElementById("whatsappLink1").setAttribute("href", createWhatsAppLink("905001112233", "Merhaba Ahenk yetkilisi"));
+    document.getElementById("whatsappLink2").setAttribute("href", createWhatsAppLink("905004445566", "Merhaba Ahenk yetkilisi"));
+    document.getElementById("whatsappLink1").setAttribute("target", "_blank");
+    document.getElementById("whatsappLink2").setAttribute("target", "_blank");
+    document.getElementById("whatsappLink1").setAttribute("rel", "noopener noreferrer");
+    document.getElementById("whatsappLink2").setAttribute("rel", "noopener noreferrer");
+
+    // Yaprak efekti (sonbahar)
     function createLeaf() {
       const leaf = document.createElement('div');
       leaf.classList.add('leaf');
 
-      // Rastgele bir sonbahar sembolü
       const leaves = ['🍂', '🍁', '🌿', '🍃'];
       leaf.textContent = leaves[Math.floor(Math.random() * leaves.length)];
 
-      // Rastgele konum, boyut, hız
       leaf.style.left = Math.random() * 100 + 'vw';
       leaf.style.fontSize = (Math.random() * 15 + 15) + 'px';
       const duration = Math.random() * 4 + 4;
@@ -145,16 +78,15 @@
 
       document.body.appendChild(leaf);
 
-      // Belirli süre sonra DOM'dan sil
       setTimeout(() => {
         leaf.remove();
       }, duration * 1000);
     }
 
-    // Her 300ms'de bir yeni yaprak
     setInterval(createLeaf, 300);
   </script>
 
 </body>
 </html>
+
 
