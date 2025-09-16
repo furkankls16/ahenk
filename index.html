@@ -108,34 +108,14 @@
   <a href="katalog2.pdf" download="katalog2.pdf">
     📗 Katalog 2
   </a>
-  <a href="https://api.whatsapp.com/send?phone=905001112233&text=Merhaba%20Ahenk%20yetkilisi" target="_blank">
+  <a href="https://api.whatsapp.com/send?phone=905550411997&text=Merhaba%20Ahenk%20yetkilisi" target="_blank">
     💬 WhatsApp - Temsilci 1
   </a>
-  <a id="whatsappLink1" class="menu-btn">
-  💬 WhatsApp - Temsilci 2
+ <a href="https://api.whatsapp.com/send?phone=905550411997&text=Merhaba%20Ahenk%20yetkilisi" 
+   target="_blank" 
+   rel="noopener noreferrer">
+   💬 WhatsApp ile İletişime Geç
 </a>
-
-<script>
-  const isAndroid = /Android/i.test(navigator.userAgent);
-  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-  const whatsappNumber = "905550411997";
-  const whatsappMessage = "Merhaba Ahenk yetkilisi";
-
-  let link;
-
-  if (isAndroid) {
-    link = `intent://send/?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}#Intent;package=com.whatsapp;scheme=smsto;end`;
-  } else if (isIOS) {
-    link = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
-  } else {
-    // Masaüstü veya bilinmeyen
-    link = `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
-  }
-
-  document.getElementById("whatsappLink1").setAttribute("href", link);
-  document.getElementById("whatsappLink1").setAttribute("target", "_blank");
-</script>
 
 </div>
 
