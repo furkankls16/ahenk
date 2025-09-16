@@ -6,37 +6,32 @@
   <title>Ahenk</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #c3ff6f;
       color: #000;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
       text-align: center;
       position: relative;
-      overflow-x: hidden;
-    }
-
-    /* Kar taneleri efekti */
-    .snowflake {
-      position: absolute;
-      top: -10px;
-      color: #fff;
-      font-size: 1em;
-      user-select: none;
-      pointer-events: none;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(0) translateX(0); opacity: 1; }
-      100% { transform: translateY(100vh) translateX(50px); opacity: 0; }
+      z-index: 1;
     }
 
     .logo {
       width: 150px;
-      margin: 30px auto 10px;
-      display: block;
+      margin-bottom: 20px;
     }
 
     h1 {
@@ -44,110 +39,60 @@
       margin-bottom: 20px;
     }
 
-    .buttons {
-      margin: 20px auto;
-      max-width: 300px;
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
     }
-    .buttons a {
+
+    .menu a {
       text-decoration: none;
       color: #fff;
       background-color: #000;
       padding: 12px 25px;
       border-radius: 8px;
-      display: inline-block;
       font-size: 1.2em;
-      margin: 10px;
       transition: background-color 0.3s, transform 0.3s;
-    }
-    .buttons a:hover {
-      background-color: #333;
-      transform: scale(1.05);
+      width: 250px;
     }
 
-    .catalogs, .calls {
-      margin: 30px auto;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .catalogs a, .calls a {
-      text-decoration: none;
-      color: #fff;
-      background-color: #000;
-      padding: 15px 25px;
-      border-radius: 8px;
-      font-size: 1.1em;
-      display: inline-block;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-    .catalogs a:hover, .calls a:hover {
+    .menu a:hover {
       background-color: #333;
       transform: scale(1.05);
     }
 
     .footer {
-      margin: 50px 0 20px;
+      margin-top: 40px;
       font-size: 0.9em;
+      color: #333;
+    }
+
+    /* Yağmur damlası efekti */
+    .raindrop {
+      position: absolute;
+      top: -10px;
+      color: #00f;
+      font-size: 1em;
+      user-select: none;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Kar efektini üretmek için JS ile oluşturulan elemanlar -->
-
-  <img src="logo6.png" alt="Ahenk Logo" class="logo" />
-
-  <h1>Ahenk</h1>
-
-  <div class="buttons">
-    <!-- Sadece Instagram -->
-    <a href="https://www.instagram.com/emirhanyvs16/" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-  </div>
-
-  <div class="catalogs">
-    <a href="katalog1.pdf" download="katalog1.pdf">
-      📘 Katalog 1
-    </a>
-    <a href="katalog2.pdf" download="katalog2.pdf">
-      📗 Katalog 2
-    </a>
-  </div>
-
-  <div class="calls">
-    <a href="tel:+905001112233">
-      📞 Ara - Satış Temsilcisi 1
-    </a>
-    <a href="tel:+905004445566">
-      📞 Ara - Satış Temsilcisi 2
-    </a>
-  </div>
-
-  <div class="footer">
-    © 2025 Ahenk. Tüm hakları saklıdır.
-  </div>
-
-  <script>
-    // Kar taneleri animasyonu ekleyelim
-    function createSnowflake() {
-      const snowflake = document.createElement('div');
-      snowflake.classList.add('snowflake');
-      snowflake.textContent = '❄';
-      snowflake.style.left = Math.random() * 100 + 'vw';
-      snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
-      snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
-      document.body.appendChild(snowflake);
-      
-      // Belirli süre sonra sil
-      setTimeout(() => {
-        snowflake.remove();
-      }, 10000);
-    }
-
-    setInterval(createSnowflake, 300);
-  </script>
-
-</body>
-</html>
+  <div class="container">
+    <img src="logo6.png" alt="Ahenk markasının logosu
